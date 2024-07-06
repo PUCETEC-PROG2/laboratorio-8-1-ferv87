@@ -75,6 +75,7 @@ deactivate
 #### Linux o MaCOS
 ~~~
 python3 manage.py runserver
+
 ~~~
 #### Windows
 ~~~
