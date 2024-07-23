@@ -39,14 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pokedex'
 ]
-class Trainer(models.Model):
-    name = models.CharField(max_length=30, null=False)
-    last_name = models.CharField(max_length=30, null=False)
-    birth_day = models.DateField()
-    level = models.IntegerField(default=1)
-    
-    def _str_(self) -> str:
-        return f'{self.name}{self.last_name}'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -79,23 +72,16 @@ WSGI_APPLICATION = 'lab8.wsgi.application'
 
 
 # Database
-# https://class Trainer(models.Model):
-    name = models.CharField(max_length=30, null=False)
-    last_name = models.CharField(max_length=30, null=False)
-    birth_day = models.DateField()
-    level = models.IntegerField(default=1)
-    
-    def _str_(self) -> str:
-        return f'{self.name}{self.last_name}'docs.djangoproject.com/en/4.2/ref/settings/#databases
+# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pokedex',
+        'NAME': 'pokedex_marco',
         'HOST': 'localhost',
         'PORT': '5432',
         'USER': 'postgres',
-        'PASSWORD': '1234'
+        'PASSWORD': 'pucetec'
     }
 }
 
@@ -135,11 +121,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-#media Files
-MEDIA_URL= 'media/'
-MEDIA_ROOT= BASE_DIR / 'media/'
+
+#Media Files 
+MEDIA_URL ='media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

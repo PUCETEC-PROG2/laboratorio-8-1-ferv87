@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Pokemon, Trainer 
+from .models import Pokemon,Trainer
 
 # Register your models here.
 @admin.register(Pokemon)
