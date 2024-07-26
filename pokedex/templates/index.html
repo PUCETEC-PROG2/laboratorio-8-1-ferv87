@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block title %}POKEDEX{% endblock title %}
 {% block content %}
-    <p class="p-2">Hola, este es tu sitio Pokemon</p>
-    <a href="{% url 'pokedex:add_pokemon' %}">Crear Pokemon</a>
+    
+    <h4 class="p-2" >BIENVENIDO A TU POKEDEX</h4>
+    <a href="{% url 'pokedex:add_pokemon' %}" class="Gloock-font">Crear Pokemon</a>
     <a href="{% url 'logout' %}">Salir</a>
-
     <div class="card-group">
 
         {%for pokemon in pokemons%}
