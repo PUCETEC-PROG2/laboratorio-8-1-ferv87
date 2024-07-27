@@ -4,7 +4,7 @@ from django.template import loader
 
 from pokedex.forms import PokemonFor
 from .models import Pokemon
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 
 #importacion de librearia de autenticacion 
 from django.contrib.auth.views import LoginView
@@ -19,7 +19,7 @@ def index(request):
  
 def pokemon(request, pokemon_id):
     #SELECT * FROM pokedex_pokemon WHERE id='pokemon_id'
-    pokemon = Pokemon.objects.get(id=pokemon_id)
+    pokemon = get_object_or_404(Pokemon,id=pokemon_id)
     template = loader.get_template('display_pokemon.html')
     context = {
         'pokemon': pokemon
@@ -38,7 +38,27 @@ def add_pokemon(request):
     
         form = PokemonFor()
         
-    return render(request,"add_pokemon.html",{'form': form }) 
+    return render(request,"pokemon_form.html",{'form': form }) 
+
+def edit_pokemon(request, id):
+    pokemon= get_object_or_404(Pokemon, pk =id)
+    if request.method=='POST':
+        form= PokemonFor(request.POST ,request.FILES, instance=pokemon)
+        if form.is_valid():
+            form.save()
+            return redirect('pokedex:index')
+        
+    else:
+    
+        form = PokemonFor()
+        
+    return render(request,"pokemon_form.html",{'form': form }) 
+
+@login_required
+def delete_pokemon(request,id):
+    pokemon=get_object_or_404(Pokemon,pk=id)
+    pokemon.delete()
+    return redirect('pokdex:index')
 
 class CustomLoginView(LoginView):
     template_name="login.html"

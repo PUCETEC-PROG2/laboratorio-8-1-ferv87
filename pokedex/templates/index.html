@@ -19,7 +19,20 @@
 
 
                 </p>
-                <a href="pokemon/{{pokemon.id}}"  class="btn btn-primary">Detalles</a>
+                <a href="pokemon/{{pokemon.id}}"  class="btn btn-primary">
+                    <i class="fa-solid fa-eye"></i>
+                </a>
+                <a href="edit_pokemonpokemon/{{pokemon.id}}"  class="btn btn-primary">
+                    <i class="fa fa-pencil"></i>
+                </a>
+                {% if user.is_authenticated%}
+                <a href="edit_pokemon/{{ pokemon.id }}" class="btn btn-success">
+                    <i class="fa fa-pencil"></i>
+                </a>
+                <a href="delete_pokemon/{{ pokemon.id }}" class="btn btn-danger">
+                    <i class="fa fa-trash"></i>
+                </a>
+                {%endif%}
             </div>
         {%endfor%}
     </div>
