@@ -2,6 +2,7 @@
 {% block title %}{{ pokemon }}{% endblock title %}
 {% block content %}
     <p class="py-4">Has elegido el pokemon: <strong>{{ pokemon | capfirst }}</strong></p>
+    <img src="{{pokemon.picture.url }}" alt="">
     <h3>Características:</h3>
     <ul>
         

@@ -12,5 +12,10 @@ urlpatterns = [
     path("delete_pokemon/<int:pokemon_id>/", views.delete_pokemon, name="delete_pokemon"),
     
     path("login/", views.CustomLoginView.as_view(), name="login"),
-]
+    
+    path("trainer/<int:trainer_id>/", views.trainer, name="trainer"),
+    path("add_trainer/", views.add_trainer, name="add_trainer"),
+    path("edit_trainer/<int:trainer_id>/", views.edit_trainer, name="edit_trainer"),
+    path("delete_trainer/<int:trainer_id>/", views.delete_trainer, name="delete_trainer"),
+]   
 

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ trainer }}{% endblock title %}
+{% block content %}
+    <p class="py-4">Has elegido al entrenador: <strong>{{ trainer | capfirst }}</strong></p>
+    <img src="{{trainer.picture.url }}" alt="">
+    <h3>Características:</h3>
+    <ul>
+        
+        <li>Nombre: {{ trainer.first_name }}</li>
+        <li>Apellido: {{ trainer.last_name }} </li>
+        <li> Fecha Nacimiento: {{ trainer.birth_date }} </li>
+        <li>Nivel: {{ trainer.level }} </li>
+        
+    </ul>
+{% endblock content %}
