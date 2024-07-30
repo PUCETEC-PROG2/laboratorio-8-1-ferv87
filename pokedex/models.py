@@ -9,6 +9,7 @@ class Trainer(models.Model):
     birth_date=models.DateField()
     level=models.IntegerField(default=1)
     
+    
     def __str__(self) -> str:
         return f'{self.first_name} {self.last_name}'
 

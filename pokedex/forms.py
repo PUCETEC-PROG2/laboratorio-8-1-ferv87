@@ -23,10 +23,10 @@ class TrainerFor(forms.ModelForm):
         ## editar un campo especifico Fields=['name,']
         fields = '__all__'
         widgets={
-            'firts_name' : forms.TextInput(attrs={'class':'form-control'}),
+            'first_name' : forms.TextInput(attrs={'class':'form-control'}),
             'last_name' : forms.TextInput(attrs={'class':'form-control'}),
             'birth_date': forms.DateInput(attrs={'class':'form-control'}),
             'level': forms.NumberInput(attrs={'class':'form-control'}),
-            'picture': forms.ClearableFileInput(attrs={'class':'form-control'}),
+            
             
         }        

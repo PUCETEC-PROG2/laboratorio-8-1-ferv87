@@ -91,7 +91,7 @@ def add_trainer(request):
 
 
 def edit_trainer(request, id):
-    trainer= get_object_or_404(Pokemon, pk =id)
+    trainer= get_object_or_404(Trainer, pk =id)
     if request.method=='POST':
         form= TrainerFor(request.POST ,request.FILES, instance=trainer)
         if form.is_valid():
@@ -108,7 +108,7 @@ def edit_trainer(request, id):
 def delete_trainer(request,id):
     trainer=get_object_or_404(Trainer,pk=id)
     trainer.delete()
-    return redirect('pokdex:index')
+    return redirect('pokedex:index')
 
 
 class CustomLoginView(LoginView):
