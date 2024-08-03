@@ -133,6 +133,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #CONFIGURA LOGIN 
 
-LOGIN_URL='/'
-REDIRECT_URL='/'
+LOGIN_REDIRECT_URL='/'
+LOGOUT_REDIRECT_URL='/'
 LOGIN_URL='pokedex:login'

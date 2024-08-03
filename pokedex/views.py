@@ -100,7 +100,7 @@ def edit_trainer(request, id):
         
     else:
     
-        form = TrainerFor()
+        form = TrainerFor(instance=trainer)
         
     return render(request,"trainer_form.html",{'form': form }) 
 
